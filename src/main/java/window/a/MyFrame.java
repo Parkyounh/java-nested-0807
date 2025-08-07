@@ -50,8 +50,6 @@ public class MyFrame extends JFrame {
 		this.setVisible(true);
 		
 		btn.addActionListener(new MyAction());
-//		btn.addActionListener(new window.MyAction(tf.getText()));
-		
 		
 		btn2.addActionListener((e) -> myFrame2.setVisible(true));
 	}
