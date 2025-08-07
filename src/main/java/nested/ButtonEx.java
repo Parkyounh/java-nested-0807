@@ -10,7 +10,6 @@ public class ButtonEx {
 		
 		btn.setOnClickListenner(new MessageListener());
 		btn.touch();
-
 	}
 
 }

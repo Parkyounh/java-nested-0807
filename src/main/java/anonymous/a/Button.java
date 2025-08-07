@@ -1,4 +1,4 @@
-package nested;
+package anonymous.a;
 
 public class Button {
 
@@ -11,7 +11,7 @@ public class Button {
 	void touch() {
 		listener.onClick();
 	}
-	static interface OnClickListener{  //static이 왜 필요?
+	interface OnClickListener{  //static이 왜 필요?
 		void onClick();
 	}
 
