@@ -1,3 +1,5 @@
+<%@page import="java.time.LocalTime"%>
+<%@page import="java.time.LocalDate"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*, javax.sql.*" %>
@@ -26,6 +28,8 @@ request.setCharacterEncoding("utf-8");
 String title = request.getParameter("title");
 String writer = request.getParameter("writer");
 String content = request.getParameter("content");
+String curTime = LocalDate.now() +" "+LocalTime.now().toString().substring(0,8);    //시간 함수
+                                        //시간정보를      문자로         8글자 가지만
 Connection conn = null;
 Statement stmt = null;
 ResultSet rs = null;
@@ -33,8 +37,8 @@ try {
     Class.forName("com.mysql.cj.jdbc.Driver");
     conn = DriverManager.getConnection("jdbc:mysql://localhost:3305/du08", "root", "1234");
     stmt = conn.createStatement();
-    String str =String.format("insert into board(title, writer,content,regtime,hits) values ('%s','%s','%s',now(),0)",title,writer,content);
-    
+    String str =String.format("insert into board(title, writer,content,regtime,hits) values ('%s','%s','%s','%s',0)",title,writer,content,curTime);
+                                                                                                            //now()는 sql에서 실행되는 함수
     stmt.executeUpdate(str);
     
 } catch (SQLException e) {

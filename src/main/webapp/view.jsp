@@ -52,7 +52,7 @@ try {
 
 <%
     }
-	  	 stmt.executeUpdate("update board set hits ="+(a+1)+" where num="+num);
+	  	 stmt.executeUpdate("update board set hits = hits+1 where num="+num);
 } catch (SQLException e) {
     out.println("데이터베이스 오류: " + e.getMessage());
 } catch (ClassNotFoundException e) {
@@ -75,5 +75,5 @@ try {
 <input type="button" value="삭제"
        onclick="location.href='delete.jsp?num=<%=num%>'">
 
-</body>
+</body>	
 </html>

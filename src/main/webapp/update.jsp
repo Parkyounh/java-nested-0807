@@ -40,7 +40,7 @@ try {
         </tr>
         <tr>
             <th>내용</th>
-            <td><textarea name="content" rows="10" value ="<%=rs.getString("content")%>"></textarea>
+            <td><textarea name="content" rows="10"><%=rs.getString("content")%></textarea>
             </td>
             <td><input type="hidden" name="num" value="<%=num%>">
         </tr>
